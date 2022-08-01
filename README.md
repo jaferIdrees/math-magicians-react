@@ -1,3 +1,48 @@
+## Math Magicians
+
+## Built With
+
+- Major languages: html, css, javascript
+- Frameworks: ReatJS
+- Technologies used: Webpack
+
+## Live Demo 
+
+[coming soon]()
+
+
+## Getting Started
+
+-Visit the [Live Demo] above.
+
+To get a local copy up and running follow these simple example steps.
+
+
+## Authors
+
+👤 **Ja'fer Yousef**
+
+- GitHub: [@githubhandle](https://github.com/jaferIdrees)
+- Twitter: [@twitterhandle](https://twitter.com/jafel_l)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/jaferll)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
