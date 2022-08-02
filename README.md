@@ -1,4 +1,8 @@
 ## Math Magicians
+"Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:
+
+- Make simple calculations.
+- Read a random math-related quote.
 
 ## Built With
 
@@ -31,7 +35,7 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/jaferIdrees/math-magicians-react/issues).
 
 ## Show your support
 
