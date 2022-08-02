@@ -1,11 +1,5 @@
 import React from 'react';
 
-/* function CalculatorKey(props) {
-  const props1 = { ...props };
-  return (<input type="button"
-  className={(Number(props1.value) > 0) ? 'number' : 'key'} value={props1.value} />);
-}
- */
 const resultElement = <input type="number" className="result" value="0" disabled />;
 
 class Calculator extends React.Component {
