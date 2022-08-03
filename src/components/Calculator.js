@@ -1,27 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
+import calculate from '../logic/calculate';
 
-const resultElement = <input type="number" className="result" value="0" disabled />;
+const keys = ['AC', '+/-', '%', '÷',
+  7, 8, 9, 'x',
+  4, 5, 6, '-',
+  1, 2, 3, '+',
+  0, '.', '='];
 
-class Calculator extends React.Component {
-  keys = ['AC', '+/-', '%', '÷',
-    7, 8, 9, 'x',
-    4, 5, 6, '-',
-    1, 2, 3, '+',
-    0, '.', '='];
+function CalculatorKey(props) {
+  const props1 = { ...props };
+  return (<input type="button" onClick={props1.clickHandler} className={(Number(props1.value) > 0) ? 'number' : 'key'} value={props1.value} />);
+}
 
-  keysElements = this.keys.map((key) => (<this.CalculatorKey value={key} key={key.toString()} />));
+class Calculator extends Component {
+  constructor(props) {
+    super(props);
+    this.clickHandler = this.clickHandler.bind(this);
+    this.state = {};
+  }
 
-  // eslint-disable-next-line class-methods-use-this
-  CalculatorKey(props) {
-    const props1 = { ...props };
-    return (<input type="button" className={(Number(props1.value) > 0) ? 'number' : 'key'} value={props1.value} />);
+  keysElements() {
+    return (keys.map((key) => (
+      <CalculatorKey value={key} key={key.toString()} clickHandler={this.clickHandler} />)));
+  }
+
+  clickHandler(e) {
+    this.setState((state) => calculate(state, e.target.value));
+    // this.calculatorData = calculate(e.target, e.target.value);
   }
 
   render() {
+    const keys = this.keysElements();
+    const { next, total } = this.state;
     return (
       <div className="calculatorContainer">
-        {resultElement}
-        {this.keysElements}
+        <input type="number" className="result" value={next || total || 0} disabled />
+        {keys}
       </div>
     );
   }
