@@ -26,7 +26,6 @@ class Calculator extends Component {
 
   clickHandler(e) {
     this.setState((state) => calculate(state, e.target.value));
-    // this.calculatorData = calculate(e.target, e.target.value);
   }
 
   render() {
@@ -34,7 +33,7 @@ class Calculator extends Component {
     const { next, total } = this.state;
     return (
       <div className="calculatorContainer">
-        <input type="number" className="result" value={next || total || 0} disabled />
+        <input type="text" className="result" value={next || total || 0} disabled />
         {keys}
       </div>
     );
