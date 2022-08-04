@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import calculate from '../logic/calculate';
 
 const keys = ['AC', '+/-', '%', '÷',
@@ -9,35 +9,28 @@ const keys = ['AC', '+/-', '%', '÷',
 
 function CalculatorKey(props) {
   const props1 = { ...props };
-  return (<input type="button" onClick={props1.clickHandler} className={(Number(props1.value) > 0) ? 'number' : 'key'} value={props1.value} />);
+  return (<input type="button" onClick={props1.clickHandler} className={(Number(props1.value) >= 0) ? 'number' : 'key'} value={props1.value} />);
 }
 
-class Calculator extends Component {
-  constructor(props) {
-    super(props);
-    this.clickHandler = this.clickHandler.bind(this);
-    this.state = {};
-  }
+function keysElements(clickHandler) {
+  return (keys.map((key) => (
+    <CalculatorKey value={key} key={key.toString()} clickHandler={clickHandler} />)));
+}
 
-  keysElements() {
-    return (keys.map((key) => (
-      <CalculatorKey value={key} key={key.toString()} clickHandler={this.clickHandler} />)));
-  }
-
-  clickHandler(e) {
-    this.setState((state) => calculate(state, e.target.value));
-  }
-
-  render() {
-    const keys = this.keysElements();
-    const { next, total } = this.state;
-    return (
-      <div className="calculatorContainer">
-        <input type="text" className="result" value={next || total || 0} disabled />
-        {keys}
-      </div>
-    );
-  }
+function Calculator() {
+  const initialData = {};
+  const [calculatorData, doCalculate] = useState(initialData);
+  const clickHandler = (e) => {
+    doCalculate((calculatorData) => calculate(calculatorData, e.target.value));
+  };
+  const keys = keysElements(clickHandler);
+  const { next, total } = calculatorData;
+  return (
+    <div className="calculatorContainer">
+      <input type="text" className="result" value={next || total || 0} disabled />
+      {keys}
+    </div>
+  );
 }
 
 export default Calculator;
