@@ -9,7 +9,7 @@ const keys = ['AC', '+/-', '%', '÷',
 
 function CalculatorKey(props) {
   const props1 = { ...props };
-  return (<input type="button" onClick={props1.clickHandler} className={(Number(props1.value) > 0) ? 'number' : 'key'} value={props1.value} />);
+  return (<input type="button" onClick={props1.clickHandler} className={(Number(props1.value) >= 0) ? 'number' : 'key'} value={props1.value} />);
 }
 
 function keysElements(clickHandler) {
