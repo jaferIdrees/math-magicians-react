@@ -33,7 +33,7 @@
 .key,
 .number {
   font-weight: bold;
-  font-size: 1.0em;
+  font-size: 1em;
 }
 
 .number[value='0'] {
