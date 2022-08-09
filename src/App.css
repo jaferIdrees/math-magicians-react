@@ -1,16 +1,25 @@
 
-.calculatorContainer {
+.calculatorContainer,
+.homePageContainer {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
+  max-width: 50vw;
+  max-height: 300px;
+}
+
+.calculatorContainer {
   display: grid;
   gap: 0.2em;
   grid-template-columns: repeat(4, 1fr);
-  max-width: 350px;
-  max-height: 300px;
+  max-width: 50vw;
+  min-width: 40vw;
+  max-height: 400px;
+  margin: auto 28px;
+  left: calc(90vw - 40vw);
 }
 
 .result {
@@ -18,11 +27,13 @@
   background-color: rgb(165, 165, 165);
   color: white;
   text-align: right;
+  font-size: 1.5em;
 }
 
 .key,
 .number {
   font-weight: bold;
+  font-size: 1em;
 }
 
 .number[value='0'] {
@@ -35,4 +46,21 @@
 .key[value='÷'],
 .key[value='-'] {
   background-color: rgb(231, 135, 101);
+}
+
+.homePageText {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 18px;
+}
+
+.calculatorTile {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto 28px;
+  max-width: 30vw;
+  min-width: 20vw;
+  max-height: 400px;
 }
