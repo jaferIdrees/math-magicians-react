@@ -26,10 +26,13 @@ function Calculator() {
   const keys = keysElements(clickHandler);
   const { next, total } = calculatorData;
   return (
-    <div className="calculatorContainer">
-      <input type="text" className="result" value={next || total || 0} disabled />
-      {keys}
-    </div>
+    <>
+      <h2 className="calculatorTile">Let&apos;s do some math!</h2>
+      <div className="calculatorContainer">
+        <input type="text" className="result" value={next || total || 0} disabled />
+        {keys}
+      </div>
+    </>
   );
 }
 

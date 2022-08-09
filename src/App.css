@@ -1,11 +1,17 @@
 
-.calculatorContainer {
+.calculatorContainer,
+.homePageContainer {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
+  max-width: 50vw;
+  max-height: 300px;
+}
+
+.calculatorContainer {
   display: grid;
   gap: 0.2em;
   grid-template-columns: repeat(4, 1fr);
@@ -35,4 +41,20 @@
 .key[value='÷'],
 .key[value='-'] {
   background-color: rgb(231, 135, 101);
+}
+
+.homePageText {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 18px;
+}
+
+.calculatorTile {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -20vw;
+  right: 0;
+  margin: auto;
+  max-width: 50vw;
+  max-height: 300px;
 }

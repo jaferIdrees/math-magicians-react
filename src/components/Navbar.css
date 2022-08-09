@@ -1,0 +1,26 @@
+.navBar {
+  position: relative;
+  margin: 20px;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.navBar li {
+  margin : 0;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.navBar li:nth-child(1),
+.navBar li:nth-child(2) {
+  border-right: 3px solid rgb(2, 61, 5);
+}
+
+.mainTitle {
+  position: relative;
+  margin: 20px;
+  float: left;
+  padding: 0.5rem;
+}
