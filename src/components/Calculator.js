@@ -9,12 +9,17 @@ const keys = ['AC', '+/-', '%', '÷',
 
 function CalculatorKey(props) {
   const props1 = { ...props };
-  return (<input type="button" onClick={props1.clickHandler} className={(Number(props1.value) >= 0) ? 'number' : 'key'} value={props1.value} />);
+  return (<input type="button" onClick={props1.clickHandler} data-testid={props1.value} className={(Number(props1.value) >= 0) ? 'number' : 'key'} value={props1.value} />);
 }
 
 function keysElements(clickHandler) {
   return (keys.map((key) => (
-    <CalculatorKey value={key} key={key.toString()} clickHandler={clickHandler} />)));
+    <CalculatorKey
+      value={key}
+      key={key.toString()}
+      clickHandler={clickHandler}
+    />
+  )));
 }
 
 function Calculator() {
@@ -29,7 +34,7 @@ function Calculator() {
     <>
       <h2 className="calculatorTile">Let&apos;s do some math!</h2>
       <div className="calculatorContainer">
-        <input type="text" className="result" value={next || total || 0} disabled />
+        <input type="text" data-testid="resultText" className="result" value={next || total || 0} disabled />
         {keys}
       </div>
     </>
