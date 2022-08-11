@@ -12,7 +12,7 @@
 
 ## Live Demo 
 
-[Live Demo](https://jaferidrees.github.io/math-magicians-react/)
+[Live Demo](https://cool-puppy-d3897f.netlify.app/)
 
 
 ## Getting Started
